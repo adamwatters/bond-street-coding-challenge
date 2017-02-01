@@ -1,0 +1,50 @@
+@import "bootstrap";
+
+.hamburger {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  font-size: inherit;
+  line-height: 1;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="rgb(0, 0, 0)"><rect y="0" width="100%" height="20%" rx="5%" ry="5%" /><rect y="40%" width="100%" height="20%" rx="5%" ry="5%" /><rect y="80%" width="100%" height="20%" rx="5%" ry="5%" /></svg>') center / 80% 80% no-repeat;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Custom page header */
+.header {
+  line-height: 3rem;
+  border-bottom: .05rem solid #e5e5e5;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 1.5rem;
+  color: #777;
+  border-top: .05rem solid #e5e5e5;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2rem;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

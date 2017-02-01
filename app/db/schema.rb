@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201161907) do
+ActiveRecord::Schema.define(version: 20170201222616) do
+
+  create_table "step_sequences", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "current_step_index", default: 0
+    t.index ["user_id"], name: "index_step_sequences_on_user_id"
+  end
+
+  create_table "steps", force: :cascade do |t|
+    t.integer "step_sequence_id"
+    t.string  "name"
+    t.boolean "is_complete",      default: false
+    t.integer "position"
+    t.index ["step_sequence_id"], name: "index_steps_on_step_sequence_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

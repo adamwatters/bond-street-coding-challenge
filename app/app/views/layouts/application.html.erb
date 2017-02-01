@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>App</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
@@ -13,10 +12,8 @@
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
               <span class="dropdown">
-                <a id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="hamburger"></span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                <span id="dropdownMenu" data-toggle="dropdown" class="hamburger"></span>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
                   <li><a href="/logout">Step 1</a></li>
                   <li><a href="/login">Step 2</a></li>
                   <li><a href="/signup">Step 3</a></li>

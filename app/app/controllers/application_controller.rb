@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_current_user
-    @current_user = session[:user_id] ? User.find(session[:user_id]) : nil
+    @current_user = session[:user_id] ? User.find(session[:user_id]) || nil : nil
   end
 
   def should_be_guest_user

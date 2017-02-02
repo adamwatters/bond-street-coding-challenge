@@ -13,20 +13,22 @@
             <li class="nav-item">
               <span class="dropdown">
                 <span id="dropdownMenu" data-toggle="dropdown" class="hamburger"></span>
-                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
                   <% if @current_user %>
-                    <li><a href="/#">Step 1</a></li>
-                    <li><a href="/#">Step 2</a></li>
-                    <li><a href="/#">Step 3</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li>
-                      <%= link_to "Logout", logout_path, method: "delete" %>
-                    </li>
+                    <% @step_sequence.steps.each do |step| %>
+                      <% if step.reachable? %>
+                        <%= link_to step.name, step, class: 'dropdown-item' %>
+                      <% else %>
+                        <%= content_tag :div, step.name, class: 'dropdown-item disabled' %>
+                      <% end =%>
+                    <% end =%>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <%= link_to "Logout", logout_path, class: "dropdown-item", method: "delete" %>
                   <% else %>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/signup">Signup</a></li>
+                    <a class="dropdown-item" href="/login">Login</a>
+                    <a class="dropdown-item" href="/signup">Signup</a>
                   <% end %>
-                </ul>
+                </div>
               </span>
             </li>
           </ul>

@@ -8,12 +8,13 @@ class StepSequence < ActiveRecord::Base
   end
 
   def can_reach(step)
+    puts step
     step.position <= first_reachable.position
   end
 
   def first_reachable
     steps.find do |s|
-      !s.is_complete
+      !s.is_complete || s.position === steps.length - 1
     end
   end
 

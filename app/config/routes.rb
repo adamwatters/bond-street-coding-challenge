@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post  '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/step/:position', to: 'steps#show', as: 'step'
+  patch '/step/:position', to: 'steps#update'
 end

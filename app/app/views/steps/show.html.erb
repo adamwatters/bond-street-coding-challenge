@@ -1,4 +1,4 @@
 <h1><%= @step.name %></h1>
-<%= form_for(@step) do |f| %>
+<%= form_for @step, :html => {:class => 'step_form'} do |f| %>
   <%= f.submit "Complete Step", class: "btn btn-primary" %>
 <% end %>

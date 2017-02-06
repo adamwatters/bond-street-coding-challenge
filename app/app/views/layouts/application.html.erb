@@ -2,50 +2,19 @@
 <html>
   <head>
     <title>App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills float-right">
-            <li class="nav-item">
-              <span class="dropdown">
-                <span id="dropdownMenu" data-toggle="dropdown" class="hamburger"></span>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
-                  <% if @current_user %>
-                    <% @step_sequence.steps.each do |step| %>
-                      <% if step.reachable? %>
-                        <%= link_to step.name, step, class: 'dropdown-item' %>
-                      <% else %>
-                        <%= content_tag :div, step.name, class: 'dropdown-item disabled' %>
-                      <% end =%>
-                    <% end =%>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <%= link_to "Logout", logout_path, class: "dropdown-item", method: "delete" %>
-                  <% else %>
-                    <a class="dropdown-item" href="/login">Login</a>
-                    <a class="dropdown-item" href="/signup">Signup</a>
-                  <% end %>
-                </div>
-              </span>
-            </li>
-          </ul>
-        </nav>
-        <span>Bond Street</span>
-      </div>
-      <section class="container">
-        <% flash.each do |message_type, message| %>
-          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
-      </section>
-      <%= yield %>
-      <footer class="footer">
-        <p>&copy; Company 2017</p>
-      </footer>
+      <%= render 'layouts/header' %>
+      <main class="main">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </main>
+      <%= render 'layouts/footer' %>
     </div>
-    <!-- /container -->
     <%= javascript_include_tag 'application' %>
   </body>
 </html>

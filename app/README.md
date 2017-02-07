@@ -1,10 +1,14 @@
 # Bond Street Coding Challenge - Application Flow
 
-### Install
+### Getting Started
 
 `gem install bundler`
 
 `bundle install`
+
+create the sqlite database
+
+`rails db:migrate`
 
 ### Serve
 

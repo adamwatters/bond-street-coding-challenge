@@ -1,7 +1,10 @@
 class StepsController < ApplicationController
   def show
     index = params[:position].to_i - 1
-    if not @step_sequence.has_step_at(index)
+    if not @step_sequence
+      flash[:danger] = 'Please log in.'
+      redirect_to root_url
+    elsif not @step_sequence.has_step_at(index)
       flash[:danger] = 'Invalid step'
       redirect_to root_url
     else

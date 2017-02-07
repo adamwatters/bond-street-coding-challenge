@@ -14,11 +14,11 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     get signup_path
     assert session[:user_id].nil?
     post signup_path, params: {user: {name: 'adam'}}
-    assert session[:user_id] === 1
+    assert_not session[:user_id].nil?
     delete logout_path
     assert session[:user_id].nil?
     post login_path, params: {user: {name: 'adam'}}
-    assert session[:user_id] === 1
+    assert_not session[:user_id].nil?
   end
 
 end

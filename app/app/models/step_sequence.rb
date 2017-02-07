@@ -8,7 +8,6 @@ class StepSequence < ActiveRecord::Base
   end
 
   def can_reach(step)
-    puts step
     step.position <= first_reachable.position
   end
 

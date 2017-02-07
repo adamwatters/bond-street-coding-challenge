@@ -21,4 +21,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not @other_user.save
   end
 
+  test "should create step_sequence when saved" do
+    assert_not @user.step_sequence
+    assert @user.save
+    assert @user.step_sequence
+  end
+
 end

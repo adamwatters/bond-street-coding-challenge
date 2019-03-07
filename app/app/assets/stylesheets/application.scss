@@ -1,0 +1,63 @@
+@import "bootstrap";
+$border-color: #e5e5e5;
+
+.header,
+.main,
+.footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.header {
+  line-height: 4rem;
+  border-bottom: .05rem solid $border-color;
+  vertical-align: middle;
+}
+
+.hamburger {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: inherit;
+  line-height: 1;
+  vertical-align: middle;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="rgb(0, 0, 0)"><rect y="0" width="100%" height="20%" rx="5%" ry="5%" /><rect y="40%" width="100%" height="20%" rx="5%" ry="5%" /><rect y="80%" width="100%" height="20%" rx="5%" ry="5%" /></svg>') center / 80% 80% no-repeat;
+}
+
+.header_logo {
+  margin-right: 16px;
+}
+
+.dropdown-menu {
+  top: 80%;
+  line-height: 2rem;
+  & li {
+    padding-left: 1rem;
+  }
+}
+
+.main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.footer {
+  padding-top: 1.5rem;
+
+  color: #777;
+  border-top: .05rem solid $border-color;
+}
+
+.step_form {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 48em) {
+  .header,
+  .main,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
